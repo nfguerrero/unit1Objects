@@ -9,9 +9,9 @@ public class DieSimulator
         {
             Random generator = new Random();
             int num = generator.nextInt(6);
-            num += 1;
+            num ++;
             System.out.println(num);
-            lock += 1;
+            lock ++;
         }    
     }
 }
