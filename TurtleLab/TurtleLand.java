@@ -54,6 +54,49 @@ public class TurtleLand
         Turtle planet5 = new Turtle(space);
         Turtle planet6 = new Turtle(space);
         Turtle planet7 = new Turtle(space);
+        Turtle laser1 = new Turtle(space);
+        Turtle laser2 = new Turtle(space);
+        Turtle laser3 = new Turtle(space);
+        Turtle laser4 = new Turtle(space);
+        Turtle laser5 = new Turtle(space);
+        Turtle laser6 = new Turtle(space);
+        Turtle laser7 = new Turtle(space);
+        laser1.setVisible(false);
+        laser2.setVisible(false);
+        laser3.setVisible(false);
+        laser4.setVisible(false);
+        laser5.setVisible(false);
+        laser6.setVisible(false);
+        laser7.setVisible(false);
+        laser1.penUp();
+        laser2.penUp();
+        laser3.penUp();
+        laser4.penUp();
+        laser5.penUp();
+        laser6.penUp();
+        laser7.penUp();
+        laser1.moveTo(100, 700);
+        laser2.moveTo(200, 700);
+        laser3.moveTo(300, 700);
+        laser4.moveTo(400, 700);
+        laser5.moveTo(500, 700);
+        laser6.moveTo(600, 700);
+        laser7.moveTo(700, 700);
+        laser1.penDown();
+        laser2.penDown();
+        laser3.penDown();
+        laser4.penDown();
+        laser5.penDown();
+        laser6.penDown();
+        laser7.penDown();
+        laser1.setPenColor(Color.RED);
+        laser2.setPenColor(Color.RED);
+        laser3.setPenColor(Color.RED);
+        laser4.setPenColor(Color.RED);
+        laser5.setPenColor(Color.RED);
+        laser6.setPenColor(Color.RED);
+        laser7.setPenColor(Color.RED);
+        ship.penUp();
         ship.moveTo(400, 700);
         planet1.moveTo(100, 750);
         planet2.moveTo(200, 750);
@@ -62,7 +105,6 @@ public class TurtleLand
         planet5.moveTo(500, 750);
         planet6.moveTo(600, 750);
         planet7.moveTo(700, 750);
-        ship.clearPath();
         planet1.clearPath();
         planet2.clearPath();
         planet3.clearPath();
@@ -116,60 +158,58 @@ public class TurtleLand
         a7.setVisible(false);
         while (1 < 2)
         {
-            Thread.sleep(1000);            
+            Thread.sleep(500);            
             int aAxis = aGen.nextInt(7);
             aAxis ++;
-            aAxis *=100;
-            Thread.sleep(1000);
-            
+            aAxis *=100;            
             if (aAxis == 100)
             {
                 a1.setVisible(true);
                 a1.setColor(Color.GRAY);
                 a1.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 200)
             {
                 a2.setVisible(true);
                 a2.setColor(Color.GRAY);
                 a2.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 300)
             {
                 a3.setVisible(true);
                 a3.setColor(Color.GRAY);
                 a3.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 400)
             {
                 a4.setVisible(true);
                 a4.setColor(Color.GRAY);
                 a4.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 500)
             {
                 a5.setVisible(true);
                 a5.setColor(Color.GRAY);
                 a5.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 600)
             {
                 a6.setVisible(true);
                 a6.setColor(Color.GRAY);
                 a6.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (aAxis == 700)
             {
                 a7.setVisible(true);
                 a7.setColor(Color.GRAY);
                 a7.setShellColor(Color.GRAY);
-                Thread.sleep(4000);                               
+                Thread.sleep(500);                               
             }
             if (a1.isVisible() == true)
             {
@@ -240,12 +280,169 @@ public class TurtleLand
                 a7.setVisible(false);
                 planet7.setShellColor(Color.RED);
                 planet7.setColor(Color.ORANGE);
-            }    
-            String direction = JOptionPane.showInputDialog("Which direction?(a = left, d = right(This might not work)");
-            System.out.print(direction);
-            String g = direction;
+            }
+            if (a1.getYPos() == laser1.getYPos())
+            {
+                a1.setColor(Color.RED);
+                a1.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a1.setColor(Color.ORANGE);
+                a1.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a1.setVisible(false);
+                a1.moveTo(100, 50);
+                laser1.clearPath();
+                laser1.penUp();
+                laser1.moveTo(100, 700);
+                laser1.penDown();
+            }
+            if (a2.getYPos() == laser2.getYPos())
+            {
+                a2.setColor(Color.RED);
+                a2.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a2.setColor(Color.ORANGE);
+                a2.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a2.setVisible(false);
+                a2.moveTo(100, 50);
+                laser2.clearPath();
+                laser2.penUp();
+                laser2.moveTo(100, 700);
+                laser2.penDown();
+            }
+            if (a3.getYPos() == laser3.getYPos())
+            {
+                a3.setColor(Color.RED);
+                a3.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a3.setColor(Color.ORANGE);
+                a3.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a3.setVisible(false);
+                a3.moveTo(100, 50);
+                laser3.clearPath();
+                laser3.penUp();
+                laser3.moveTo(100, 700);
+                laser3.penDown();
+            }
+            if (a4.getYPos() == laser4.getYPos())
+            {
+                a4.setColor(Color.RED);
+                a4.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a4.setColor(Color.ORANGE);
+                a4.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a4.setVisible(false);
+                a4.moveTo(100, 50);
+                laser4.clearPath();
+                laser4.penUp();
+                laser4.moveTo(100, 700);
+                laser4.penDown();
+            }
+            if (a4.getYPos() == laser4.getYPos())
+            {
+                a4.setColor(Color.RED);
+                a4.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a4.setColor(Color.ORANGE);
+                a4.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a4.setVisible(false);
+                a4.moveTo(100, 50);
+                laser4.clearPath();
+                laser4.penUp();
+                laser4.moveTo(100, 700);
+                laser4.penDown();
+            }
+            if (a5.getYPos() == laser5.getYPos())
+            {
+                a5.setColor(Color.RED);
+                a5.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a5.setColor(Color.ORANGE);
+                a5.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a5.setVisible(false);
+                a5.moveTo(100, 50);
+                laser5.clearPath();
+                laser5.penUp();
+                laser5.moveTo(100, 700);
+                laser5.penDown();
+            }
+            if (a6.getYPos() == laser6.getYPos())
+            {
+                a6.setColor(Color.RED);
+                a6.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a6.setColor(Color.ORANGE);
+                a6.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a6.setVisible(false);
+                a6.moveTo(100, 50);
+                laser6.clearPath();
+                laser6.penUp();
+                laser6.moveTo(100, 700);
+                laser6.penDown();
+            }
+            if (a7.getYPos() == laser7.getYPos())
+            {
+                a7.setColor(Color.RED);
+                a7.setShellColor(Color.GRAY);
+                Thread.sleep(25);
+                a7.setColor(Color.ORANGE);
+                a7.setShellColor(Color.RED);
+                Thread.sleep(25);
+                a7.setVisible(false);
+                a7.moveTo(100, 50);
+                laser7.clearPath();
+                laser7.penUp();
+                laser7.moveTo(100, 700);
+                laser7.penDown();
+            }
+            laser1.clearPath();
+            laser2.clearPath();
+            laser3.clearPath();
+            laser4.clearPath();
+            laser5.clearPath();
+            laser6.clearPath();
+            laser7.clearPath();
+            if (laser1.getYPos() < 700)
+            {
+                laser1.forward(100);
+            }
+            if (laser2.getYPos() < 700)
+            {
+                laser2.forward(100);
+            } 
+            if (laser3.getYPos() < 700)
+            {
+                laser3.forward(100);
+            } 
+            if (laser4.getYPos() < 700)
+            {
+                laser4.forward(100);
+            } 
+            if (laser5.getYPos() < 700)
+            {
+                laser5.forward(100);
+            } 
+            if (laser6.getYPos() < 700)
+            {
+                laser6.forward(100);
+            } 
+            if (laser7.getYPos() < 700)
+            {
+                laser7.forward(100);
+            }
+            String direction = JOptionPane.showInputDialog("Which direction?(a = left, d = right), add w to fire, ex(aw, dw)");
             String a = "a";
-            if (g == a)
+            String d = "d";
+            String aw = "aw";
+            String dw = "dw";
+            String w = "w";
+            if (direction.compareTo(a) == 0)
             {
                 ship.turnLeft();
                 ship.forward(100);
@@ -253,10 +450,133 @@ public class TurtleLand
             }
             else
             {
-                ship.turnRight();
-                ship.forward(100);
-                ship.turnLeft();
-            }    
-        }
+                if (direction.compareTo(d) == 0)
+                {
+                    ship.turnRight();
+                    ship.forward(100);
+                    ship.turnLeft();
+                }
+                if(direction.compareTo(aw) == 0)
+                {
+                    ship.turnLeft();
+                    ship.forward(100);
+                    ship.turnRight(); 
+                    if (ship.getXPos() == 100)
+                    {
+                        laser1.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 200)
+                    {
+                        laser2.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 300)
+                    {
+                        laser3.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 400)
+                    {
+                        laser4.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 500)
+                    {
+                        laser5.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 600)
+                    {
+                        laser6.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 700)
+                    {
+                        laser7.forward(50);
+                        Thread.sleep(50);
+                    }
+                }    
+                if(direction.compareTo(dw) == 0)
+                {
+                    ship.turnRight();
+                    ship.forward(100);
+                    ship.turnLeft();
+                    if (ship.getXPos() == 100)
+                    {
+                        laser1.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 200)
+                    {
+                        laser2.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 300)
+                    {
+                        laser3.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 400)
+                    {
+                        laser4.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 500)
+                    {
+                        laser5.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 600)
+                    {
+                        laser6.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 700)
+                    {
+                        laser7.forward(50);
+                        Thread.sleep(50);
+                    }
+                }   
+                if (direction.compareTo(w) == 0)
+                {
+                    if (ship.getXPos() == 100)
+                    {
+                        laser1.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 200)
+                    {
+                        laser2.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 300)
+                    {
+                        laser3.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 400)
+                    {
+                        laser4.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 500)
+                    {
+                        laser5.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 600)
+                    {
+                        laser6.forward(50);
+                        Thread.sleep(50);
+                    }
+                    if (ship.getXPos() == 700)
+                    {
+                        laser7.forward(50);
+                        Thread.sleep(50);
+                    }
+                }    
+            }
+        }    
     }
 }
