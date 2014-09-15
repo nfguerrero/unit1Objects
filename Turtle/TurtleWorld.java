@@ -5,12 +5,15 @@ public class TurtleWorld
     public static void main(String args[])
     {
         World turtleWorld = new World();
-        World turtleWorld2 = new World();
         Turtle turtle = new Turtle(turtleWorld);
-        Turtle turtle2 = new Turtle(turtleWorld2);
-        turtle2.forward(30);
-        turtle.setPenColor(Color.RED);
-        turtle.penDown();
-        turtle.forward(50);
+        int count = 0;
+        turtle.turn(30);
+        while (count < 3)
+        {
+            turtle.forward(100);
+            turtle.turn(120);
+            count ++;
+        }  
+        turtle.turn(-120);
     }
 }
